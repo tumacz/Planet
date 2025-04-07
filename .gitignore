@@ -1,0 +1,50 @@
+# This .gitignore file is for Unity projects
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+
+# Auto-generated VS/JetBrains files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+
+# Rider
+.idea/
+*.sln.iml
+
+# Unity Cache
+*.apk
+*.aab
+
+# Unity crash reports
+sysinfo.txt
+
+# Exclude raw asset meta
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Visual Studio Code
+.vscode/
+
+# Build pipeline caches
+[Bb]uild*/**/build-report.txt

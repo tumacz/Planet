@@ -48,3 +48,5 @@ sysinfo.txt
 
 # Build pipeline caches
 [Bb]uild*/**/build-report.txt
+.vs/
+Assets/Resources/Textures/_heightGrayScale.png

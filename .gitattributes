@@ -1,0 +1,17 @@
+# Traktuj Shader Graphy jako pliki tekstowe (lepszy diff)
+*.shadergraph text
+*.ShaderGraph text
+
+# Traktuj inne Unity-typowe pliki tekstowe tak samo
+*.anim text
+*.asset text
+*.controller text
+*.mat text
+*.meta text
+*.physicMaterial text
+*.prefab text
+*.unity text
+*.uxml text
+*.uss text
+*.json text
+*.asmdef text

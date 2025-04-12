@@ -69,6 +69,40 @@ public class CameraOrbitController : MonoBehaviour
             StopCoroutine(orbitRoutine);
     }
 
+    private void Start()
+    {
+        PositionCameraAtStart();
+    }
+
+    private void PositionCameraAtStart()
+    {
+        if (target == null) return;
+
+        float scale = Mathf.Max(target.localScale.x, target.localScale.y, target.localScale.z);
+        float minDistance = scale * 1.02f;
+        float maxDistance = scale * 1.7f;
+
+        distance = targetDistance = Mathf.Lerp(minDistance, maxDistance, 0.5f);
+
+        latitude = 20f;
+        longitude = 45f;
+
+        float latRad = latitude * Mathf.Deg2Rad;
+        float lonRad = longitude * Mathf.Deg2Rad;
+
+        Vector3 offset = new Vector3(
+            Mathf.Cos(latRad) * Mathf.Sin(lonRad),
+            Mathf.Sin(latRad),
+            Mathf.Cos(latRad) * Mathf.Cos(lonRad)
+        );
+
+        transform.position = target.position + offset * distance;
+        transform.LookAt(target.position);
+
+        Vector3 euler = transform.rotation.eulerAngles;
+        transform.rotation = Quaternion.Euler(euler.x, euler.y, 0f);
+    }
+
     private IEnumerator OrbitLoop()
     {
         while (true)

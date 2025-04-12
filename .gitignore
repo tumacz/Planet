@@ -50,3 +50,4 @@ sysinfo.txt
 [Bb]uild*/**/build-report.txt
 .vs/
 Assets/Resources/Textures/_heightGrayScale.png
+Assets/Resources/Textures/Layers/_heightGrayScale.png

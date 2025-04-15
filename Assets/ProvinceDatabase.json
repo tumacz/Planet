@@ -1,0 +1,122 @@
+[
+    {
+        "Name": "GreatBritain",
+        "Color": "#D54E38",
+        "ID": 13979192,
+        "OwnerEmpire": "Great Britain"
+    },
+    {
+        "Name": "France",
+        "Color": "#EF7870",
+        "ID": 15693936,
+        "OwnerEmpire": "France"
+    },
+    {
+        "Name": "Spain",
+        "Color": "#6B55EE",
+        "ID": 7034350,
+        "OwnerEmpire": "Spain"
+    },
+    {
+        "Name": "Portugal",
+        "Color": "#4CDFEF",
+        "ID": 5038063,
+        "OwnerEmpire": "Portugal"
+    },
+    {
+        "Name": "Germany",
+        "Color": "#BD48C9",
+        "ID": 12404937,
+        "OwnerEmpire": "Germany"
+    },
+    {
+        "Name": "Italy",
+        "Color": "#9E3A39",
+        "ID": 10369593,
+        "OwnerEmpire": "Italy"
+    },
+    {
+        "Name": "Austria-Hungary",
+        "Color": "#49696D",
+        "ID": 4811117,
+        "OwnerEmpire": "Austria-Hungary"
+    },
+    {
+        "Name": "OttomanEmpire",
+        "Color": "#B3CC38",
+        "ID": 11783224,
+        "OwnerEmpire": "Ottoman Empire"
+    },
+    {
+        "Name": "Russia",
+        "Color": "#C164E9",
+        "ID": 12674281,
+        "OwnerEmpire": "Russia"
+    },
+    {
+        "Name": "Japan",
+        "Color": "#D8E5BD",
+        "ID": 14214589,
+        "OwnerEmpire": "Japan"
+    },
+    {
+        "Name": "China",
+        "Color": "#9D6AA4",
+        "ID": 10316452,
+        "OwnerEmpire": "China"
+    },
+    {
+        "Name": "India",
+        "Color": "#C87933",
+        "ID": 13138227,
+        "OwnerEmpire": "India"
+    },
+    {
+        "Name": "Netherlands",
+        "Color": "#F45AE4",
+        "ID": 16014052,
+        "OwnerEmpire": "Netherlands"
+    },
+    {
+        "Name": "Belgium",
+        "Color": "#9E8979",
+        "ID": 10389881,
+        "OwnerEmpire": "Belgium"
+    },
+    {
+        "Name": "USA",
+        "Color": "#5969F5",
+        "ID": 5859829,
+        "OwnerEmpire": "USA"
+    },
+    {
+        "Name": "Mexico",
+        "Color": "#884C49",
+        "ID": 8932425,
+        "OwnerEmpire": "Mexico"
+    },
+    {
+        "Name": "Brazil",
+        "Color": "#934A8D",
+        "ID": 9652877,
+        "OwnerEmpire": "Brazil"
+    },
+    {
+        "Name": "Argentina",
+        "Color": "#8ACC75",
+        "ID": 9096309,
+        "OwnerEmpire": "Argentina"
+    },
+    {
+        "Name": "Persia",
+        "Color": "#3DECA7",
+        "ID": 4058279,
+        "OwnerEmpire": "Persia"
+    },
+    {
+        "Name": "Sweden",
+        "Color": "#BB5192",
+        "ID": 12276114,
+        "OwnerEmpire": "Sweden"
+    }
+]

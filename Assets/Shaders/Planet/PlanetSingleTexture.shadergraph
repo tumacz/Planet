@@ -6025,7 +6025,7 @@
     "m_ObjectId": "31e197a9a66b465a89e94c8c32ea4374",
     "m_Title": "Low Mountains Mask",
     "m_Position": {
-        "x": -910.9998779296875,
+        "x": -911.0,
         "y": -3767.0
     }
 }
@@ -8199,7 +8199,7 @@
     "m_ObjectId": "522bbfdae5ff4838b7b92d061a98ed56",
     "m_Title": "LOD Debug",
     "m_Position": {
-        "x": -489.9998779296875,
+        "x": -490.0,
         "y": -139.0
     }
 }
@@ -11724,7 +11724,7 @@
     "m_ObjectId": "8827bf5ca0cc42a39f41f93de8d8f135",
     "m_Title": "Land Mask (R)",
     "m_Position": {
-        "x": -1351.9998779296875,
+        "x": -1352.0,
         "y": -978.0
     }
 }
@@ -16144,7 +16144,7 @@
     "m_ObjectId": "cc68d558a3ac4aa8bd99a14bdad6790c",
     "m_Title": "Base Map",
     "m_Position": {
-        "x": 1498.9998779296875,
+        "x": 1499.0,
         "y": -712.0
     }
 }
@@ -16191,7 +16191,7 @@
     "m_ObjectId": "cc83d95757bf426cbbf2a370d92b3461",
     "m_Title": "Mountain Height Mask",
     "m_Position": {
-        "x": -1054.9998779296875,
+        "x": -1055.0,
         "y": -2814.0
     }
 }

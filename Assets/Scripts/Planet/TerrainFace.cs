@@ -21,11 +21,12 @@ public class TerrainFace
     public void ConstructMesh()
     {
         Vector3[] vertices = new Vector3[resolution * resolution];
+        Vector2[] uvs = new Vector2[vertices.Length];
         int[] triangles = new int[(resolution - 1) * (resolution - 1) * 6];
         int vertexIndex = 0;
 
         for (int y = 0; y < resolution; y++)
-        { 
+        {
             for (int x = 0; x < resolution; x++)
             {
                 int i = x + y * resolution;
@@ -33,6 +34,8 @@ public class TerrainFace
                 Vector3 pointOnUnitCube = localup + (percent.x - 0.5f) * 2 * axisA + (percent.y - 0.5f) * 2 * axisB;
                 Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
                 vertices[i] = pointOnUnitSphere;
+
+                uvs[i] = percent;
 
                 if (x < resolution - 1 && y < resolution - 1)
                 {
@@ -48,9 +51,11 @@ public class TerrainFace
                 }
             }
         }
+
         mesh.Clear();
         mesh.vertices = vertices;
         mesh.triangles = triangles;
+        mesh.uv = uvs;
 
         Vector3[] normals = new Vector3[vertices.Length];
         for (int i = 0; i < normals.Length; i++)

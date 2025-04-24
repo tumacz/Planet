@@ -53,6 +53,9 @@
         },
         {
             "m_Id": "ee98c687407c43e087320c50508ac0d0"
+        },
+        {
+            "m_Id": "4f9e94dee48a4beb8a440c409b98e2ab"
         }
     ],
     "m_Keywords": [],
@@ -12713,6 +12716,34 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "4f9e94dee48a4beb8a440c409b98e2ab",
+    "m_Guid": {
+        "m_GuidSerialized": "b10bab62-a0ee-4594-976d-f02a7e790e2b"
+    },
+    "m_Name": "HeightStep",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "HeightStep",
+    "m_DefaultReferenceName": "_HeightStep",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.009999999776482582,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
     "m_ObjectId": "4fb8338aba99453cadfa191d5c6bd640",
@@ -12842,8 +12873,8 @@
     "m_ObjectId": "516dc845583042cf8d58a33f67b3342f",
     "m_Title": "Plateau Mask",
     "m_Position": {
-        "x": -1214.0,
-        "y": -4294.0
+        "x": -1213.999755859375,
+        "y": -4293.99951171875
     }
 }
 
@@ -13014,7 +13045,7 @@
     "m_ObjectId": "51fa1aa05fbf47df804e03474a750144",
     "m_Title": "LOD zoom - out(clamped fadeT)",
     "m_Position": {
-        "x": -2514.0,
+        "x": -2513.999755859375,
         "y": -38.0
     }
 }
@@ -13865,10 +13896,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 330.9999694824219,
-            "y": -440.0,
+            "x": 402.9999694824219,
+            "y": -432.99993896484377,
             "width": 207.99996948242188,
-            "height": 302.0
+            "height": 301.99993896484377
         }
     },
     "m_Slots": [
@@ -17693,8 +17724,8 @@
     "m_ObjectId": "7ed91b69509a46c2bd6bf64bb8c72f33",
     "m_Title": "Out UV",
     "m_Position": {
-        "x": -2518.0,
-        "y": -543.0
+        "x": -2517.999755859375,
+        "y": -542.9999389648438
     }
 }
 
@@ -20324,8 +20355,8 @@
     "m_ObjectId": "9a4126c0decb4f13a85661b5f4748c0a",
     "m_Title": "AquaMask",
     "m_Position": {
-        "x": -134.0,
-        "y": -567.0
+        "x": -133.9998779296875,
+        "y": -566.9999389648438
     }
 }
 
@@ -20984,6 +21015,9 @@
         },
         {
             "m_Id": "ee98c687407c43e087320c50508ac0d0"
+        },
+        {
+            "m_Id": "4f9e94dee48a4beb8a440c409b98e2ab"
         }
     ]
 }
@@ -23678,8 +23712,8 @@
     "m_ObjectId": "bc54d7c4affc4ce6b1fab80d2c00c879",
     "m_Title": "HighMountainsMask",
     "m_Position": {
-        "x": -203.0,
-        "y": -7558.0
+        "x": -202.9998779296875,
+        "y": -7557.99951171875
     }
 }
 
@@ -26471,8 +26505,8 @@
     "m_ObjectId": "dbf9f1820fa0412aa9eb5767375fc78b",
     "m_Title": "LandMask",
     "m_Position": {
-        "x": -352.0,
-        "y": -2141.0
+        "x": -351.999755859375,
+        "y": -2140.999755859375
     }
 }
 
@@ -28542,7 +28576,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"ae40671cf4386cc4fa859328f0f98936\",\"type\":3}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -28698,8 +28732,8 @@
     "m_ObjectId": "f023f829b977454b9f43d7029eb1e73a",
     "m_Title": "LowMountainsMask",
     "m_Position": {
-        "x": -1646.0,
-        "y": -5922.0
+        "x": -1645.999755859375,
+        "y": -5921.99951171875
     }
 }
 

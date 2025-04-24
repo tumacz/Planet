@@ -42,7 +42,8 @@ public class ProvinceImporter : EditorWindow
                 Name = jsonProv.Name,
                 Color = color,
                 ID = jsonProv.ID,
-                Owner = jsonProv.OwnerEmpire
+                Owner = jsonProv.OwnerEmpire,
+                UVCenter = new Vector2(jsonProv.PointUV[0], jsonProv.PointUV[1])
             };
             targetDatabase.Provinces.Add(p);
         }
@@ -63,8 +64,9 @@ public class ProvinceImporter : EditorWindow
     private class JsonProvince
     {
         public string Name;
-        public string Color;       // Hex string, e.g., "#FFAA00"
+        public string Color;
         public int ID;
         public string OwnerEmpire;
+        public float[] PointUV;
     }
 }

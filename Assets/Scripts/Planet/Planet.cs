@@ -1,14 +1,23 @@
 ﻿using UnityEngine;
 
+[ExecuteInEditMode]
 public class Planet : MonoBehaviour
 {
     [SerializeField, HideInInspector]
     private MeshFilter[] meshFilters;
     private TerrainFace[] terrainFaces;
 
-    [SerializeField] private bool drawGizmos = true;
+    [Header("Rendering")]
     [SerializeField] private Material material;
     [SerializeField, Range(2, 256)] private int resolution = 10;
+
+    [Header("Gizmos")]
+    [SerializeField] private bool drawGizmos = true;
+    [SerializeField] private bool showUVLabels = false;
+    [SerializeField, Range(1, 36)] private int uvLabelStep = 6;
+    [SerializeField] private Vector3 uvLabelOffset = new Vector3(0.05f, 0.05f, 0.05f);
+    [SerializeField] private Color gizmoColor = Color.cyan;
+
 
     private void OnValidate()
     {
@@ -33,14 +42,7 @@ public class Planet : MonoBehaviour
                 GameObject meshObject = new GameObject("TerrainFace" + i);
                 meshObject.transform.parent = transform;
 
-                if (material != null)
-                {
-                    meshObject.AddComponent<MeshRenderer>().sharedMaterial = material;
-                }
-                else
-                {
-                    meshObject.AddComponent<MeshRenderer>().sharedMaterial = new Material(Shader.Find("Standard"));
-                }
+                meshObject.AddComponent<MeshRenderer>().sharedMaterial = material ?? new Material(Shader.Find("Standard"));
                 meshFilters[i] = meshObject.AddComponent<MeshFilter>();
                 meshFilters[i].mesh = new Mesh();
             }
@@ -60,56 +62,17 @@ public class Planet : MonoBehaviour
     private void OnDrawGizmos()
     {
         if (!drawGizmos) return;
-        int latitudeLines = 18; 
-        int longitudeLines = 36;
-        float radius = 1f;      
 
-        Gizmos.color = Color.green;
-
-        for (int i = 1; i < latitudeLines; i++)
-        {
-            float lat = Mathf.PI * i / latitudeLines;
-            float y = Mathf.Cos(lat);
-            float r = Mathf.Sin(lat);
-
-            Vector3 prevPoint = Vector3.zero;
-            for (int j = 0; j <= longitudeLines; j++)
-            {
-                float lon = 2 * Mathf.PI * j / longitudeLines;
-                float x = Mathf.Cos(lon) * r;
-                float z = Mathf.Sin(lon) * r;
-
-                Vector3 point = new Vector3(x, y, z).normalized * radius;
-                point = transform.TransformPoint(point);
-
-                if (j > 0)
-                    Gizmos.DrawLine(prevPoint, point);
-
-                prevPoint = point;
-            }
-        }
-
-        for (int i = 0; i < longitudeLines; i++)
-        {
-            float lon = 2 * Mathf.PI * i / longitudeLines;
-            Vector3 prevPoint = Vector3.zero;
-
-            for (int j = 0; j <= latitudeLines; j++)
-            {
-                float lat = Mathf.PI * j / latitudeLines;
-                float y = Mathf.Cos(lat);
-                float r = Mathf.Sin(lat);
-                float x = Mathf.Cos(lon) * r;
-                float z = Mathf.Sin(lon) * r;
-
-                Vector3 point = new Vector3(x, y, z).normalized * radius;
-                point = transform.TransformPoint(point);
-
-                if (j > 0)
-                    Gizmos.DrawLine(prevPoint, point);
-
-                prevPoint = point;
-            }
-        }
+        GizmoUV.DrawSphereGrid(
+            transform,
+            showUVLabels,
+            uvLabelStep,
+            uvLabelOffset,
+            latitudeLines: 18,
+            longitudeLines: 36,
+            radius: 1f,
+            gizCol: gizmoColor
+        );
     }
+
 }

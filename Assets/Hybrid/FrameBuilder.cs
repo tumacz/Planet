@@ -7,7 +7,8 @@ public class FrameBuilder : MonoBehaviour
 	[Header("Rendering")]
 	[SerializeField] private Material _material;
 	[SerializeField, Range(2, 255)] private int _frameFragmentResolution = 2;
-	[SerializeField, Range(1, 20)] private int _frameFaceResolution = 1;
+	[SerializeField, Range(1, 6)] private int _frameFaceResolution = 1;
+	private Vector3 _builderPoint;
 
 	private bool _needsRebuild = false;
 
@@ -50,8 +51,11 @@ public class FrameBuilder : MonoBehaviour
 
 	private void Generate()
 	{
-		float fragmentSize = 2f; // Rozmiar fragmentu generowanego przez FrameFragment
+		_builderPoint = transform.position;
+		float fragmentSize = 2f;
 		int faceRes = _frameFaceResolution;
+
+		float sphereRadius = faceRes * fragmentSize * 0.5f;
 
 		for (int f = 0; f < 6; f++)
 		{
@@ -63,63 +67,19 @@ public class FrameBuilder : MonoBehaviour
 
 			switch (f)
 			{
-				case 0: // Back
-					faceName = "Back";
-					localUp = Vector3.back;
-					axisA = Vector3.right;
-					axisB = Vector3.up;
-					faceRootPos = new Vector3(0, 0, -faceRes * fragmentSize * 0.5f);
-					break;
-
-				case 1: // Right
-					faceName = "Right";
-					localUp = Vector3.right;
-					axisA = Vector3.forward;
-					axisB = Vector3.up;
-					faceRootPos = new Vector3(faceRes * fragmentSize * 0.5f, 0, 0);
-					break;
-
-				case 2: // Up
-					faceName = "Up";
-					localUp = Vector3.up;
-					axisA = Vector3.right;
-					axisB = Vector3.forward;
-					faceRootPos = new Vector3(0, faceRes * fragmentSize * 0.5f, 0);
-					break;
-
-				case 3: // Front
-					faceName = "Front";
-					localUp = Vector3.forward;
-					axisA = Vector3.right;
-					axisB = Vector3.up;
-					faceRootPos = new Vector3(0, 0, faceRes * fragmentSize * 0.5f);
-					break;
-
-				case 4: // Left
-					faceName = "Left";
-					localUp = Vector3.left;
-					axisA = Vector3.forward;
-					axisB = Vector3.up;
-					faceRootPos = new Vector3(-faceRes * fragmentSize * 0.5f, 0, 0);
-					break;
-
-				case 5: // Down
-					faceName = "Down";
-					localUp = Vector3.down;
-					axisA = Vector3.right;
-					axisB = Vector3.forward;
-					faceRootPos = new Vector3(0, -faceRes * fragmentSize * 0.5f, 0);
-					break;
+				case 0: faceName = "Back"; localUp = Vector3.back; axisA = Vector3.right; axisB = Vector3.up; faceRootPos = new Vector3(0, 0, -faceRes * fragmentSize * 0.5f); break;
+				case 1: faceName = "Right"; localUp = Vector3.right; axisA = Vector3.forward; axisB = Vector3.up; faceRootPos = new Vector3(faceRes * fragmentSize * 0.5f, 0, 0); break;
+				case 2: faceName = "Up"; localUp = Vector3.up; axisA = Vector3.right; axisB = Vector3.forward; faceRootPos = new Vector3(0, faceRes * fragmentSize * 0.5f, 0); break;
+				case 3: faceName = "Front"; localUp = Vector3.forward; axisA = Vector3.right; axisB = Vector3.up; faceRootPos = new Vector3(0, 0, faceRes * fragmentSize * 0.5f); break;
+				case 4: faceName = "Left"; localUp = Vector3.left; axisA = Vector3.forward; axisB = Vector3.up; faceRootPos = new Vector3(-faceRes * fragmentSize * 0.5f, 0, 0); break;
+				case 5: faceName = "Down"; localUp = Vector3.down; axisA = Vector3.right; axisB = Vector3.forward; faceRootPos = new Vector3(0, -faceRes * fragmentSize * 0.5f, 0); break;
 			}
 
 			GameObject faceRoot = new GameObject("Face_" + faceName);
 			faceRoot.transform.parent = transform;
-
-			// Przesunięcie całej ściany o 1 jednostkę do środka bryły
 			faceRoot.transform.localPosition = faceRootPos - localUp * 1f;
 			faceRoot.transform.localRotation = Quaternion.identity;
 
-			// Rozstaw fragmentów centrowany
 			float start = -faceRes * fragmentSize * 0.5f + fragmentSize * 0.5f;
 
 			for (int y = 0; y < faceRes; y++)
@@ -141,8 +101,8 @@ public class FrameBuilder : MonoBehaviour
 					meshFilter.sharedMesh = mesh;
 					meshRenderer.sharedMaterial = _material ?? new Material(Shader.Find("Standard"));
 
-					FrameFragment fragment = new FrameFragment(mesh, _frameFragmentResolution, localUp);
-					fragment.ConstructMesh();
+					FrameFragment fragment = new FrameFragment(mesh, _frameFragmentResolution, localUp, _builderPoint, sphereRadius);
+					fragment.ConstructMesh(tile.transform);
 				}
 			}
 		}

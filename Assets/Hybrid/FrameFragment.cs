@@ -1,55 +1,63 @@
 using UnityEngine;
 
-public class FrameFragment : MonoBehaviour
+public class FrameFragment
 {
-	Mesh _mesh;
-	private int _obtainedFrameFragmentResolution;
-	Vector3 _localup;
-	Vector3 _axisA;
-	Vector3 _axisB;
+	private Mesh _mesh;
+	private int _resolution;
+	private Vector3 _localUp;
+	private Vector3 _axisA;
+	private Vector3 _axisB;
+	private Vector3 _sphereCenter;
+	private float _sphereRadius;
 
-	public FrameFragment(Mesh mesh, int resolution, Vector3 localup)
+	public FrameFragment(Mesh mesh, int resolution, Vector3 localUp, Vector3 sphereCenter, float sphereRadius)
 	{
-		this._mesh = mesh;
-		this._obtainedFrameFragmentResolution = resolution;
-		this._localup = localup;
+		_mesh = mesh;
+		_resolution = resolution;
+		_localUp = localUp;
+		_sphereCenter = sphereCenter;
+		_sphereRadius = sphereRadius;
 
-		_axisA = new Vector3(localup.y, localup.z, localup.x);
-		_axisB = Vector3.Cross(localup, _axisA);
+		_axisA = new Vector3(_localUp.y, _localUp.z, _localUp.x);
+		_axisB = Vector3.Cross(_localUp, _axisA);
 	}
 
-	public void ConstructMesh()
+	public void ConstructMesh(Transform transform)
 	{
-		Vector3[] vertices = new Vector3[_obtainedFrameFragmentResolution * _obtainedFrameFragmentResolution];
+		Vector3[] vertices = new Vector3[_resolution * _resolution];
 		Vector2[] uvs = new Vector2[vertices.Length];
-		int[] triangles = new int[(_obtainedFrameFragmentResolution - 1) * (_obtainedFrameFragmentResolution - 1) * 6];
-		int vertexIndex = 0;
+		int[] triangles = new int[(_resolution - 1) * (_resolution - 1) * 6];
+		int triIndex = 0;
 
-		for (int y = 0; y < _obtainedFrameFragmentResolution; y++)
+		for (int y = 0; y < _resolution; y++)
 		{
-			for (int x = 0; x < _obtainedFrameFragmentResolution; x++)
+			for (int x = 0; x < _resolution; x++)
 			{
-				int i = x + y * _obtainedFrameFragmentResolution;
-				Vector2 percent = new Vector2(x, y) / (_obtainedFrameFragmentResolution - 1);
-				//Vector3 pointOnUnitCube = _localup + (percent.x - 0.5f) * 2 * _axisA + (percent.y - 0.5f) * 2 * _axisB;
-				//Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
-				//vertices[i] = pointOnUnitSphere;
-				Vector3 pointOnCubeFace = _localup + (percent.x - 0.5f) * 2 * _axisA + (percent.y - 0.5f) * 2 * _axisB;
-				vertices[i] = pointOnCubeFace;
+				int i = x + y * _resolution;
+				Vector2 percent = new Vector2(x, y) / (_resolution - 1);
+
+				Vector3 pointOnFace = _localUp +
+					(percent.x - 0.5f) * 2f * _axisA +
+					(percent.y - 0.5f) * 2f * _axisB;
+
+				Vector3 worldPoint = transform.TransformPoint(pointOnFace);
+				Vector3 direction = (worldPoint - _sphereCenter).normalized;
+				Vector3 spherified = _sphereCenter + direction * _sphereRadius;
+				vertices[i] = transform.InverseTransformPoint(spherified);
 
 				uvs[i] = percent;
 
-				if (x < _obtainedFrameFragmentResolution - 1 && y < _obtainedFrameFragmentResolution - 1)
+				if (x < _resolution - 1 && y < _resolution - 1)
 				{
-					triangles[vertexIndex] = i;
-					triangles[vertexIndex + 1] = i + _obtainedFrameFragmentResolution + 1;
-					triangles[vertexIndex + 2] = i + _obtainedFrameFragmentResolution;
+					triangles[triIndex] = i;
+					triangles[triIndex + 1] = i + _resolution + 1;
+					triangles[triIndex + 2] = i + _resolution;
 
-					triangles[vertexIndex + 3] = i;
-					triangles[vertexIndex + 4] = i + 1;
-					triangles[vertexIndex + 5] = i + _obtainedFrameFragmentResolution + 1;
+					triangles[triIndex + 3] = i;
+					triangles[triIndex + 4] = i + 1;
+					triangles[triIndex + 5] = i + _resolution + 1;
 
-					vertexIndex += 6;
+					triIndex += 6;
 				}
 			}
 		}
@@ -62,7 +70,7 @@ public class FrameFragment : MonoBehaviour
 		Vector3[] normals = new Vector3[vertices.Length];
 		for (int i = 0; i < normals.Length; i++)
 		{
-			normals[i] = vertices[i].normalized;
+			normals[i] = (vertices[i] - transform.InverseTransformPoint(_sphereCenter)).normalized;
 		}
 		_mesh.normals = normals;
 	}

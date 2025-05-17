@@ -2,8 +2,7 @@
 using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using Unity.Plastic.Newtonsoft.Json;
+using Unity.Plastic.Newtonsoft.Json; //todo: use Newtonsoft.Json, not Unity.Plastic
 
 public class ProvinceExtractor : EditorWindow
 {
@@ -31,34 +30,6 @@ public class ProvinceExtractor : EditorWindow
         }
     }
 
-    //void GenerateJSON()
-    //{
-    //    var uniqueColors = new HashSet<Color32>();
-    //    Color32[] pixels = provinceMap.GetPixels32();
-
-    //    foreach (var pixel in pixels)
-    //    {
-    //        // Odrzucamy przezroczyste piksele
-    //        if (pixel.a == 255)
-    //            uniqueColors.Add(pixel);
-    //    }
-
-    //    var provinceList = uniqueColors.Select(color => new Province
-    //    {
-    //        Name = "",
-    //        Color = $"#{color.r:X2}{color.g:X2}{color.b:X2}",
-    //        ID = (color.r << 16) + (color.g << 8) + color.b,
-    //        Owner = "",
-    //        PointUV = new float[2] { 0, 0 }
-    //    }).ToList();
-
-    //    string json = JsonConvert.SerializeObject(provinceList, Formatting.Indented);
-    //    string path = Path.Combine(Application.dataPath, outputFileName);
-    //    File.WriteAllText(path, json);
-
-    //    Debug.Log($"Province JSON saved to: {path}");
-    //    AssetDatabase.Refresh();
-    //}
     void GenerateJSON()
     {
         if (provinceMap == null) return;
@@ -68,8 +39,7 @@ public class ProvinceExtractor : EditorWindow
         int height = provinceMap.height;
 
         var colorPoints = new Dictionary<Color32, List<Vector2>>();
-
-        int step = 4; // resolution step
+        int step = 4;
 
         for (int y = 0; y < height; y += step)
         {
@@ -87,7 +57,7 @@ public class ProvinceExtractor : EditorWindow
             }
         }
 
-        var provinceList = new List<Province>();
+        var provinceList = new List<JsonProvince>();
 
         foreach (var kvp in colorPoints)
         {
@@ -100,13 +70,13 @@ public class ProvinceExtractor : EditorWindow
 
             Vector2 avgUV = points.Count > 0 ? uvSum / points.Count : Vector2.zero;
 
-            provinceList.Add(new Province
+            provinceList.Add(new JsonProvince
             {
                 Name = "",
                 Color = $"#{color.r:X2}{color.g:X2}{color.b:X2}",
                 ID = (color.r << 16) + (color.g << 8) + color.b,
-                Owner = "",
-                PointUV = new float[2] { avgUV.x, avgUV.y }
+                OwnerEmpire = "",
+                PointUV = new float[] { avgUV.x, avgUV.y }
             });
         }
 
@@ -119,12 +89,12 @@ public class ProvinceExtractor : EditorWindow
     }
 
     [System.Serializable]
-    public class Province
+    private class JsonProvince
     {
         public string Name;
         public string Color;
         public int ID;
-        public string Owner;
+        public string OwnerEmpire;
         public float[] PointUV;
     }
 }

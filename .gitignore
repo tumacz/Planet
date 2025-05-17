@@ -52,3 +52,8 @@ sysinfo.txt
 Assets/Resources/Textures/_heightGrayScale.png
 Assets/Resources/Textures/Layers/_heightGrayScale.png
 Assets/Resources/Textures/Layers/EnglandProvince_8192.png
+
+Assets/FlatApproach/Shaders/Textures/base/Height_16384.png
+Assets/FlatApproach/Shaders/Textures/normal_16384_equalized.png
+Assets/GlobeApproach/Textures/_heightGrayScale.png
+Assets/GlobeApproach/Textures/EnglandProvince_8192.png

@@ -11,7 +11,7 @@ public class CameraFlyOverStage : MonoBehaviour
 	[SerializeField] private float margin = 5f;
 
 	[Header("Movement Settings")]
-	[SerializeField] private float moveSpeed = 20f;
+//	[SerializeField] private float moveSpeed = 20f;
 	[SerializeField] private float moveSmoothTime = 0.15f;
 	[SerializeField] private float maxDistanceSpeed = 50f;
 	[SerializeField] private float minDistanceSpeed = 2f;

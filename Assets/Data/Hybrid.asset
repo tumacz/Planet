@@ -1,0 +1,383 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae768af00828c54f82b7e8a310097d2, type: 3}
+  m_Name: Hybrid
+  m_EditorClassIdentifier: 
+  Provinces:
+  - Name: 
+    Color: {r: 0, g: 0, b: 0, a: 1}
+    ID: 0
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.5503773, y: 0.5037447}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 1, g: 1, b: 1, a: 1}
+    ID: 16777215
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.47440636, y: 0.49755323}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.6509804, g: 0.79607844, b: 0.3647059, a: 1}
+    ID: 10931037
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.48647836, y: 0.7800481}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.6313726, g: 0.44705883, b: 0.7529412, a: 1}
+    ID: 10580672
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.48910156, y: 0.7816797}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.60784316, g: 0.6, b: 0.3529412, a: 1}
+    ID: 10197338
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49325562, y: 0.7822876}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.12941177, g: 0.45490196, b: 1, a: 1}
+    ID: 2192639
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4958562, y: 0.78433806}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.8627451, g: 0.18039216, b: 0.37254903, a: 1}
+    ID: 14429791
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49172142, y: 0.7840021}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.57254905, g: 0.8117647, b: 0.59607846, a: 1}
+    ID: 9621400
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49926758, y: 0.78365886}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.6313726, g: 0.4627451, b: 0, a: 1}
+    ID: 10581504
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.50212544, y: 0.78463924}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.63529414, g: 0.50980395, b: 0.2509804, a: 1}
+    ID: 10650176
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49065608, y: 0.7875089}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.63529414, g: 0.49411765, b: 1, a: 1}
+    ID: 10649343
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4935167, y: 0.78792316}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.6313726, g: 0.47843137, b: 0.5019608, a: 1}
+    ID: 10582656
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49710083, y: 0.78845215}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.12941177, g: 0.46666667, b: 0.2509804, a: 1}
+    ID: 2193216
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49975586, y: 0.7861328}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.12941177, g: 0.47058824, b: 0.2509804, a: 1}
+    ID: 2193472
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49990234, y: 0.7882162}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.13333334, g: 0.4862745, b: 0.7529412, a: 1}
+    ID: 2260160
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.5016984, y: 0.7887228}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.8666667, g: 0.95686275, b: 0.83137256, a: 1}
+    ID: 14546132
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.48762208, y: 0.78867185}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.76862746, g: 0.5019608, b: 0, a: 1}
+    ID: 12877824
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4900879, y: 0.7913086}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.81960785, g: 0.19215687, b: 0.30588236, a: 1}
+    ID: 13709646
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.5026925, y: 0.7918806}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.13333334, g: 0.5019608, b: 0, a: 1}
+    ID: 2260992
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49195498, y: 0.79162014}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.8117647, g: 0.7137255, b: 0.45490196, a: 1}
+    ID: 13612660
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49407086, y: 0.7922712}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.627451, g: 0.25882354, b: 0.23921569, a: 1}
+    ID: 10502717
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49680093, y: 0.792733}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.4509804, g: 0.56078434, b: 0.6901961, a: 1}
+    ID: 7573424
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49906412, y: 0.7916667}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.13333334, g: 0.5176471, b: 0.5019608, a: 1}
+    ID: 2262144
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.48916015, y: 0.79472655}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.63529414, g: 0.5254902, b: 0.7529412, a: 1}
+    ID: 10651328
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49928978, y: 0.79567647}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.8980392, g: 0.52156866, b: 0.15294118, a: 1}
+    ID: 15041831
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4923753, y: 0.7956731}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.3254902, g: 0.20392157, b: 0.49411765, a: 1}
+    ID: 5452926
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4954928, y: 0.7958609}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.13333334, g: 0.53333336, b: 1, a: 1}
+    ID: 2263295
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49235025, y: 0.7996419}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.38431373, g: 0.7019608, b: 0.8156863, a: 1}
+    ID: 6468560
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4957491, y: 0.7985409}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.85882354, g: 0.5882353, b: 0.5764706, a: 1}
+    ID: 14390931
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4984131, y: 0.79937744}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.6392157, g: 0.5411765, b: 0, a: 1}
+    ID: 10717696
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49442545, y: 0.80110675}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.69411767, g: 0.67058825, b: 0.5294118, a: 1}
+    ID: 11643783
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.48714194, y: 0.80110675}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.90588236, g: 0.2, b: 0.16862746, a: 1}
+    ID: 15151915
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4965549, y: 0.8024089}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.6392157, g: 0.5568628, b: 0.5019608, a: 1}
+    ID: 10718848
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49171957, y: 0.80358887}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.6392157, g: 0.57254905, b: 1, a: 1}
+    ID: 10719999
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.48813012, y: 0.80764043}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.13725491, g: 0.54901963, b: 0.2509804, a: 1}
+    ID: 2329664
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.494535, y: 0.80607724}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.8627451, g: 0.08627451, b: 0.08627451, a: 1}
+    ID: 14423574
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4900635, y: 0.8061035}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.79607844, g: 0.4862745, b: 0.4862745, a: 1}
+    ID: 13335676
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4928711, y: 0.80826825}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.83137256, g: 0.4627451, b: 0.21960784, a: 1}
+    ID: 13923896
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.48628503, y: 0.8121553}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.9254902, g: 0.79607844, b: 0.08627451, a: 1}
+    ID: 15518486
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.48304966, y: 0.81473213}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.13725491, g: 0.5647059, b: 0.7529412, a: 1}
+    ID: 2330816
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49085286, y: 0.8112305}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.13725491, g: 0.5803922, b: 0, a: 1}
+    ID: 2331648
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4896289, y: 0.8148438}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.14117648, g: 0.59607846, b: 0.5019608, a: 1}
+    ID: 2398336
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4871279, y: 0.8174165}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.6392157, g: 0.5882353, b: 0.2509804, a: 1}
+    ID: 10720832
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49247333, y: 0.8177639}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.6431373, g: 0.6039216, b: 0.7529412, a: 1}
+    ID: 10787520
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.4809919, y: 0.8219169}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.90588236, g: 0.49803922, b: 0.16862746, a: 1}
+    ID: 15171371
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.48712978, y: 0.8223822}
+    UVOffsets: []
+  - Name: 
+    Color: {r: 0.7058824, g: 0.50980395, b: 1, a: 1}
+    ID: 11830015
+    Owner: 
+    Population:
+      Classes: []
+    UVCenter: {x: 0.49145508, y: 0.8273926}
+    UVOffsets: []

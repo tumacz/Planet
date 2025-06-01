@@ -15,11 +15,11 @@ public class SpaceTransform : MonoBehaviour
         Vector2 right = transform.right;
         Vector2 up = transform.up;
 
-        Vector2 LocalToWorld(Vector2 localPt)
-        {
-            Vector2 worldOffset = right * localPt.x + up * localPt.y;
-            return (Vector2)transform.position + worldOffset;
-        }
+        //Vector2 LocalToWorld(Vector2 localPt)
+        //{
+        //    Vector2 worldOffset = right * localPt.x + up * localPt.y;
+        //    return (Vector2)transform.position + worldOffset;
+        //}
 
         Vector2 WorldToLocal(Vector2 worldPt)
         {
